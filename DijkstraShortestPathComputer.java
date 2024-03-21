@@ -199,7 +199,7 @@ public class DijkstraShortestPathComputer<L>
         GraphEdge<L> edge = this.graph.getEdge(u, v); // O(1)
         // compute the distance from source of the adjacent node
         double newDistance = u.getFloatingPointDistance() + edge.getWeight();
-        // if the newDistance is lower than the current one than update distance, priority and previous accordingly
+        // if the newDistance is lower than the current one then update distance, priority and previous accordingly
         if(v.getPriority() > newDistance){
             this.queue.decreasePriority(v, newDistance); // O(log(V))
             v.setPrevious(u);

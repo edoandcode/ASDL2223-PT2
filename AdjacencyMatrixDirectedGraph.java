@@ -216,7 +216,7 @@ public class AdjacencyMatrixDirectedGraph<L> extends Graph<L> {
             // get the node at the given index
             return this.getNode(nodeIndex); // O(V)
         }
-        // if the given node is not in this graph than return null
+        // if the given node is not in this graph then return null
         return null;
     }
 
@@ -235,13 +235,13 @@ public class AdjacencyMatrixDirectedGraph<L> extends Graph<L> {
         if(i < 0 || i >= this.nodeCount())
             throw new IndexOutOfBoundsException("L'indice fornito non valido.");
 
-        // search the key (GraphNode<L>) which references the given index
+        // search the key (GraphNode<L>) that references the given index
         // O(V)
         for(Map.Entry<GraphNode<L>, Integer> entry : this.nodesIndex.entrySet())
             if(entry.getValue() == i)
                 return entry.getKey();
 
-        // if there aren't nodes associated with the given index than return null
+        // if there aren't nodes associated with the given index then return null
         // unreachable state
         return null;
     }
@@ -641,7 +641,7 @@ public class AdjacencyMatrixDirectedGraph<L> extends Graph<L> {
         for(ArrayList<GraphEdge<L>> edges : this.matrix) // O(V)
             for(GraphEdge<L> edge : edges) // O(V)
                 if(edge != null)
-                    // for each cell of the adjacency matrix, if it stores an edge than add it to the set
+                    // for each cell of the adjacency matrix, if it stores an edge then add it to the set
                     graphEdges.add(edge);
 
         // return the set
